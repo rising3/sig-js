@@ -1,0 +1,70 @@
+{
+  "name": "ec-sign",
+  "version": "0.1.0",
+  "description": "ECDSA cryptographic signature library for JavaScript",
+  "homepage": "https://github.com/rising3/ec-sign-js#README.md",
+  "files": [
+    "./dist",
+    "README.md",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.cjs"
+      },
+      "node": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.mjs"
+      },
+      "default": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rising3/ec-sign-js.git"
+  },
+  "scripts": {
+    "clean": "rimraf ./dist",
+    "build": "npm run build:esbuild && npm run build:types",
+    "build:esbuild": "tsx build.ts",
+    "build:types": "tsc --declaration --emitDeclarationOnly --declarationDir './dist' -p tsconfig.json",
+    "lint": "eslint src/**/*.ts __tests__/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts __tests__/**/*.ts --fix",
+    "format": "prettier --check src/**/*.ts __tests__/**/*.ts",
+    "format:fix": "prettier --write src/**/*.ts __tests__/**/*.ts",
+    "test": "TZ=UTC jest"
+  },
+  "author": "rising3(Michio Nakagawa)",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/jest": "^29.5.2",
+    "@types/node": "^20.4.1",
+    "@typescript-eslint/eslint-plugin": "^5.61.0",
+    "@typescript-eslint/parser": "^5.61.0",
+    "esbuild": "^0.21.4",
+
+    "eslint": "^8.44.0",
+    "eslint-config-prettier": "^8.8.0",
+    "jest": "^29.6.1",
+    "prettier": "^3.0.0",
+    "rimraf": "^5.0.1",
+    "ts-jest": "^29.1.1",
+    "tsx": "^4.11.0",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+  }
+}
