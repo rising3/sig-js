@@ -1,8 +1,12 @@
 {
   "name": "ec-sign",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "ECDSA cryptographic signature library for JavaScript",
-  "keywords": ["ecdsa","signature", "verification"],
+  "keywords": [
+    "ecdsa",
+    "signature",
+    "verification"
+  ],
   "homepage": "https://github.com/rising3/ec-sign-js#readme",
   "files": [
     "./dist",
